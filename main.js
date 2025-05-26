@@ -44,10 +44,10 @@ const fragmentShader = `
 		float dist = distance(mousePos, uv);
 
 		// Create ripple effect with easing
-		float ripple = sin(dist * 12.0 - time * 2.0) * cos(dist * 12.0 - time * 2.0) * 0.105;
+		float ripple = tan(dist * 12.0 - time * 2.0) * cos(dist * 12.0 - time * 2.0) * 0.105;
 
 		// Smooth fade out with custom easing
-		float fadeOut = smoothstep(0.2, 0.0, dist);
+		float fadeOut = smoothstep(0.4, 0.0, dist);
 		fadeOut = smoothstep(0.0, 1.0, fadeOut); // Additional easing
 		ripple *= fadeOut;
 
