@@ -9,7 +9,7 @@ document.body.appendChild(renderer.domElement);
 
 // Create video element and texture
 const video = document.createElement("video");
-video.src = "offside.mp4";
+video.src = "offside.webm";
 video.loop = true;
 video.muted = true;
 video.playsInline = true;
