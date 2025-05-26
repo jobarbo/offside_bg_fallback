@@ -44,7 +44,7 @@ const fragmentShader = `
 		float dist = distance(mousePos, uv);
 
 		// Create ripple effect with easing
-		float ripple = tan(dist * 12.0 - time * 2.0) * cos(dist * 12.0 - time * 2.0) * 0.105;
+		float ripple = tan(dist * 12.0 - time * 2.0) * cos(dist * 12.0 - time * 2.0) * 0.05;
 
 		// Smooth fade out with custom easing
 		float fadeOut = smoothstep(0.4, 0.0, dist);
@@ -143,8 +143,8 @@ function animate() {
 	planeMaterial.uniforms.rippleStrength.value += (targetStrength - planeMaterial.uniforms.rippleStrength.value) * 0.015;
 
 	// Smooth rotation based on mouse position
-	targetRotationY = mouseX * 0.3;
-	targetRotationX = -mouseY * 0.3;
+	targetRotationY = mouseX * 0.2;
+	targetRotationX = -mouseY * 0.2;
 
 	plane.rotation.x += (targetRotationX - plane.rotation.x) * 0.05;
 	plane.rotation.y += (targetRotationY - plane.rotation.y) * 0.05;
